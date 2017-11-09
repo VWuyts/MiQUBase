@@ -1,0 +1,91 @@
+/* Copyright (C) 2017 Véronique Wuyts
+ * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
+ * Professionele Bachelor Elektronica-ICT
+ *
+ * MiQUBase is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MiQUBase is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MiQUBase. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+a{
+	display:block;
+	width:270px;
+	background-color:rgba(204,204,255,.3);
+	padding:5px 2px 5px 2px;
+	margin:30px auto 0px auto;
+	border:1px solid #006;
+}
+a:hover{
+	color:#fff;
+	font-weight:bold;
+	background-color:#006;
+}
+h1{
+	display:block;
+	width:805px;
+	text-align:center;
+	margin:0px auto 15px auto;
+}
+form, table{
+	width:805px;
+	margin:0px auto 0px auto;
+}
+tr:nth-child(odd){
+	background-color:rgba(204,204,255,.2);
+}
+td, th{
+	padding:7.5px 0px 7.5px 10px;
+}
+th{
+	font-weight:bold;
+	text-align:left;
+}
+td input.checkbox{
+	float:none;
+}
+div.buttonbox{
+	width:805px;
+	margin:15px auto;
+}
+.buttonbox a{
+	box-sizing:border-box;
+	width:30%;
+	font-size:18px;
+	background-color:rgba(204,204,255,.2);
+	border:1px solid #006;
+	padding:6px 2px 7px 2px;
+}
+input.button{
+	width:30%;
+	font-size:18px;
+	color:#006;
+	background-color:rgba(204,204,255,.2);
+	border:1px solid #006;
+	padding:5px 2px 5px 2px;
+	margin-top:30px;
+}
+input.button:hover, .buttonbox a:hover{
+	font-weight:bold;
+	color:#006;
+	box-shadow:2px 2px #006;
+}
+a.right, input.right{
+	float:right;
+	margin-left:20px;
+}
+a.large{
+	width:300px;
+}
+a.cancel{
+	width:150px;
+	padding:7.5px;
+}

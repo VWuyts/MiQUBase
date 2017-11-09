@@ -1,0 +1,47 @@
+/* Copyright (C) 2017 Véronique Wuyts
+ * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
+ * Professionele Bachelor Elektronica-ICT
+ *
+ * MiQUBase is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MiQUBase is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MiQUBase. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+form{
+	width:350px;
+	margin:0px auto 0px auto;
+}
+label{
+	display:inline-block;
+	width:90px;
+	margin:10px 0px 10px 0px;
+}
+form p input{
+	width:230px;
+	margin-top:5px;
+}
+div.buttonbox{
+	margin:15px 0px 15px 0px;
+}
+input.button{
+	width:30%;
+	font-size:16px;
+	color:#006;
+	background-color:rgba(204,204,255,.4);
+	border:1px solid #006;
+	padding:5px 2px 5px 2px;
+	margin:15px 0px 0px 0px;
+}
+input.button:hover{
+	font-weight:bold;
+	box-shadow:2px 2px #006;
+}

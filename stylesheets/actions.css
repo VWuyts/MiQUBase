@@ -1,0 +1,148 @@
+/* Copyright (C) 2017 Véronique Wuyts
+ * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
+ * Professionele Bachelor Elektronica-ICT
+ *
+ * MiQUBase is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * MiQUBase is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with MiQUBase. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+h1,h3{
+	display:block;
+	width:805px;
+	text-align:center;
+	margin:0px auto 15px auto;
+}
+.top{
+	margin:20px auto 0px auto;
+}
+form, table{
+	width:805px;
+	margin:0px auto 0px auto;
+}
+form p{
+	padding-top:5px;
+}
+label{
+	display:inline-block;
+	vertical-align:top;
+	width:280px;
+	margin:5px 10px 0px 0px;
+}
+input, select{
+	box-sizing:border-box;
+	width:320px;
+	float:none;
+}
+input#operator, input#foreignkeyid{
+	width:50px;
+	margin-left:0px;
+}
+input.operators{
+	margin-left:290px;
+	width:50px;
+}
+input.samples{
+	width:50px;
+}
+select.runnumber{
+	width:300px;
+	float:right;
+}
+#initials{
+	display:inline-block;
+	width:270px;
+}
+select{
+	margin-left:4px;
+}
+textarea{
+	box-sizing:border-box;
+	width:320px;
+	height:80px;
+	padding:4px;
+	border:1px solid #006;
+	border-radius:5px;
+}
+div.buttonbox{
+	margin:15px 0px 15px 0px;
+}
+.buttonBox a{
+	display:inline-block;
+	box-sizing:border-box;
+	width:30%;
+	font-size:18px;
+	background-color:rgba(204,204,255,.2);
+	border:1px solid #006;
+	padding:6px 2px 7px 2px;
+	margin-top:15px;
+}
+input.button{
+	width:30%;
+	font-size:18px;
+	color:#006;
+	background-color:rgba(204,204,255,.2);
+	border:1px solid #006;
+	padding:5px 2px 5px 2px;
+	margin-top:15px;
+	float:none;
+}
+input.ok{
+	width:100px;
+	float:none;
+	background-color:rgba(204,204,255,.2);
+}
+input.checkbutton, input.uncheckbutton{
+	width:200px;
+	background-color:rgba(204,204,255,.2);
+	margin-left:20px;
+	float:right;
+}
+input.button:hover, .buttonBox a:hover, input.ok:hover, input.checkbutton:hover, input.uncheckbutton:hover{
+	font-weight:bold;
+	box-shadow:2px 2px #006;
+}
+.buttonMarginRight{
+	margin-right:3.3%;
+}
+.error{
+	color:#f00;
+	vertical-align:top;
+	font-size:14px;
+}
+tr:nth-child(odd){
+	background-color:rgba(204,204,255,.2);
+}
+td{
+	padding:7.5px 0px 7.5px 10px;
+}
+td.attribute{
+	width:35%;
+	vertical-align:top;
+}
+a.right, input.right{
+	float:right;
+	margin-left:20px;
+}
+a.homelink{
+	display:block;
+	width:200px;
+	background-color:rgba(204,204,255,.3);
+	padding:5px 2px 5px 2px;
+	margin:30px auto 0px auto;
+	border:1px solid #006;
+}
+a.homelink:hover{
+	color:#fff;
+	font-weight:bold;
+	background-color:#006;
+}
