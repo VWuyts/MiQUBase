@@ -1,5 +1,6 @@
-## Ignore Visual Studio Code files and
-## files of external libraries
+## Ignore Visual Studio Code files,
+## files of external libraries and
+## message files created by MiQUBase
 
 # Visual Studio Code
 .vscode/*
@@ -10,3 +11,6 @@
 
 # External libraries
 php/externalclasses/*
+
+# Message files
+message/*
