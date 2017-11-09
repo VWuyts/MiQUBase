@@ -14,3 +14,6 @@ php/externalclasses/*
 
 # Message files
 message/*
+
+# Files uploaded in MiQUBase
+uploads/*
