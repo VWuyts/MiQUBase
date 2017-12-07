@@ -17,3 +17,6 @@ message/*
 
 # Files uploaded in MiQUBase
 uploads/*
+
+# Configuration file
+config.ini
