@@ -19,4 +19,4 @@ message/*
 uploads/*
 
 # Configuration file
-config.ini
+conf/config.ini
