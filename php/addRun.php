@@ -24,8 +24,6 @@
 		require 'functions.php';
 		require 'logHandling.php';
 		require 'errorHandling.php';
-		createHead(true, 'MiQUBase add run', ['actions'], null);
-		createHeader($_SESSION['user'], true);
 		
 		// Define input array
 		$inputArr = [
@@ -60,7 +58,7 @@
 				}
 				else
 				{
-					// Check if runNumber does not exists in database
+					// Check if runNumber does not exist in database
 					$query = "SELECT runID
 							FROM run
 							WHERE runNumber = $1";
@@ -82,7 +80,7 @@
 						|| $_FILES['runParXml']['size'] > 10000)
 				{
 					$inputArr['runParXml'] = null;
-					$runParXmlErr = "runParameters.xml";
+					$runParXmlErr = "Required";
 				}
 				else
 				{
@@ -91,7 +89,7 @@
 					if ($fileType != 'xml')
 					{
 						$inputArr['runParXml'] = null;
-						$runParXmlErr = "runParameters.xml";
+						$runParXmlErr = "xml required";
 					}
 					else
 					{
@@ -347,6 +345,10 @@
 				}
 			}
 		}
+
+		// Show form 
+		createHead(true, 'MiQUBase add run', ['actions'], null);
+		createHeader($_SESSION['user'], true);
 ?>
 		<h1>Add a new run to MiQUBase</h1>
 		<form method="post" action="<?php echo(htmlspecialchars($_SERVER['PHP_SELF'])); ?>" enctype="multipart/form-data"> <!--enctype="multipart/form-data" is needed for php file upload-->
