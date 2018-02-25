@@ -131,6 +131,10 @@
 				$errorlogger->error('php function pg_insert failed', ['user'=>$messageArray[1], 'errno'=>$messageArray[0], 'file'=>$messageArray[2], 'line'=>$messageArray[3]]);
 				$userMessage = ['Inserting a database record failed.', 'Please contact the MiQUBase administrator.'];
 				break;
+			case '023':
+				$activitylogger->warning('runID already present in database', ['user'=>$messageArray[1], 'errno'=>$messageArray[0], 'file'=>$messageArray[2], 'line'=>$messageArray[3], 'runID'=>$messageArray[5]]);
+				$userMessage = [$messageArray[5] .' is already present in the database.', 'Duplicate runIDs are not allowed.'];
+				break;
 			default:
 				if (isset($_SESSION['user']))
 				{
