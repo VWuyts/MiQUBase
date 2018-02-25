@@ -24,8 +24,6 @@
 		require 'functions.php';
 		require 'logHandling.php';
 		require 'errorHandling.php';
-		createHead(true, 'MiQUBase run overview', ['actions'], null);
-		createHeader($_SESSION['user'], true);
 		
 		// Set database connection
 		if (($dbconn = pg_connect($_SESSION['connString'])) === false)
@@ -100,6 +98,34 @@
 				}
 				$_SESSION['inputArr']['numCycles'] = $cycles;
 				$_SESSION['inputArr']['seqCartidge'] = (string)$xml->ReagentKitVersion;
+			}
+			// Check if runId does not exist in database
+			$query = "SELECT * 
+						FROM run 
+						WHERE runId = $1";
+			$result = pg_query_params($dbconn, $query, [$_SESSION['inputArr']['runId']]);
+			if (!$result)
+			{
+				pg_close($dbconn);
+				if (!unlink($_SESSION['inputArr']['runParXml']))
+				{
+					$errorlogger->error('deleting uploaded file failed', ['user'=>$_SESSION['user'], 'file'=>__FILE__, 'line'=>__LINE__]);
+				}
+				unset($_SESSION['inputArr']);
+				trigger_error('006@'.$_SESSION['user'].'@'.__FILE__.'@'.__LINE__.'@0', E_USER_ERROR);
+				die();
+			}
+			elseif (empty(pg_fetch_result($result, 'runNumber')) === false)
+			{
+				pg_close($dbconn);
+				if (!unlink($_SESSION['inputArr']['runParXml']))
+				{
+					$errorlogger->error('deleting uploaded file failed', ['user'=>$_SESSION['user'], 'file'=>__FILE__, 'line'=>__LINE__]);
+				}
+				$duplicateRunId = $_SESSION['inputArr']['runId'];
+				unset($_SESSION['inputArr']);
+				trigger_error('023@'.$_SESSION['user'].'@'.__FILE__.'@'.__LINE__.'@0@'.$duplicateRunId, E_USER_ERROR);
+				die();
 			}
 			// Get libraryPrepKit name
 			$query = "SELECT libraryprepkitname
@@ -195,6 +221,10 @@
 				}
 			}
 		}
+
+		// Show overview table
+		createHead(true, 'MiQUBase run overview', ['actions'], null);
+		createHeader($_SESSION['user'], true);
 ?>
 		<h1>Overview of run to add to MiQUBase</h1>
 		<table>
