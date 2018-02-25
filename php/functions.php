@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Véronique Wuyts
+/* Copyright (C) 2017-2018 Véronique Wuyts
  * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
  * Professionele Bachelor Elektronica-ICT
  *
@@ -34,7 +34,7 @@
 		echo("\t\t<div id='footercenter'>\n");
 			if ($inDirPhp) echo("\t\t\t<img id='logomiqubase' src='../images/logomiqubase_white.svg' alt='logo MiQUBase' />\n");
 			else echo("\t\t\t<img id='logomiqubase' src='images/logomiqubase_white.svg' alt='logo MiQUBase' />\n");
-			echo("\t\t\t<p>Last update 09-11-2017</p>\n");
+			echo("\t\t\t<p>Last update 25/02/2018</p>\n");
 		echo("\t\t</div>\n");
 		echo("\t\t<p class='spacer'></p>\n");
 		echo("\t</footer>\n");
@@ -122,7 +122,7 @@
 	function createErrorPage($messageArray)
 	{
 		$content = "<?php\n";
-		$content .= "/* Copyright (C) 2017 Véronique Wuyts\n";
+		$content .= "/* Copyright (C) 2017-2018 Véronique Wuyts\n";
 		$content .= " * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer\n";
 		$content .= " * Professionele Bachelor Elektronica-ICT\n";
 		$content .= " *\n";
@@ -167,7 +167,7 @@
 	function createMessagePage($messageArray, $user, $php, $button)
 	{
 		$content = "<?php\n";
-		$content .= "/* Copyright (C) 2017 Véronique Wuyts\n";
+		$content .= "/* Copyright (C) 2017-2018 Véronique Wuyts\n";
 		$content .= " * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer\n";
 		$content .= " * Professionele Bachelor Elektronica-ICT\n";
 		$content .= " *\n";

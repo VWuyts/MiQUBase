@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Véronique Wuyts
+/* Copyright (C) 2017-2018 Véronique Wuyts
  * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
  * Professionele Bachelor Elektronica-ICT
  *
