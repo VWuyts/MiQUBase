@@ -288,7 +288,7 @@
 			elseif (($rows = pg_num_rows($result)) == 0)
 			{
 				echo("\t\t<p class='message'>There are currently no runs with samples marked 'to repeat' loaded into MiQUBase.</p>\n");
-				echo("\t\t<p><a href='administrativeTasks.php'>Back to tasks overview page</a></p>\n");
+				echo("\t\t<p><a class='homelink' href='administrativeTasks.php'>Back to tasks overview page</a></p>\n");
 			}
 			else
 			{
