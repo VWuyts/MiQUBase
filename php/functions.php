@@ -62,9 +62,12 @@
 		echo("\t<link href='".$dir."favicon.ico' rel='icon' type='image/ico' />\n");
 		echo("\t<link href='".$dir."stylesheets/reset_v2.css' rel='stylesheet' type='text/css' />\n");
 		echo("\t<link href='".$dir."stylesheets/miqubase.css' rel='stylesheet' type='text/css' />\n");
-		for ($i = 0; $i < count($cssArray); $i++)
+		if (!is_null($cssArray)) // count(NULL) emits a warning as of PHP 7.2
 		{
-			echo("\t<link href='".$dir."stylesheets/".$cssArray[$i].".css' rel='stylesheet' type='text/css' />\n");
+			for ($i = 0; $i < count($cssArray); $i++)
+			{
+				echo("\t<link href='".$dir."stylesheets/".$cssArray[$i].".css' rel='stylesheet' type='text/css' />\n");
+			}
 		}
 		if (!is_null($script))
 		{
@@ -239,6 +242,10 @@
 	 */
 	function checkReceptionDate($array)
 	{
+		if (is_null($array)) // count(NULL) emits a warning as of PHP 7.2
+		{
+			return false;
+		}
 		for ($i = 0; $i < count($array); $i++)
 		{
 			if (empty($array[$i]['receptiondate']))
@@ -256,6 +263,10 @@
 	function getValidDate($input)
 	{
 		$inputArr = explode("/", $input);
+		if (is_null($inputArr)) // count(NULL) emits a warning as of PHP 7.2
+		{
+			return false;
+		}
 		if (count($inputArr) < 3)
 		{
 			return false;
