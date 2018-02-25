@@ -17,7 +17,8 @@
  * along with MiQUBase. If not, see <http://www.gnu.org/licenses/>.
  */
 	spl_autoload_register(function ($class) {
-		$file = 'externalclasses/'.$class.'.php';
+		//$file = 'externalclasses/'.$class.'.php'; // for Windows environment
+		$file = 'externalclasses/'.strtr($class, '\\', DIRECTORY_SEPARATOR).'.php'; // for Linux environment
 		if (file_exists($file)) {
 			require $file;
 			return true;
