@@ -33,9 +33,9 @@
 		// Set database connection
 		if (($dbconn = pg_connect($_SESSION['connString'])) === false)
 		{
-			if (!unlink($_SESSION['inputArr']['requestForm']) || !unlink($_SESSION['inputArr']['savIndex']) || !unlink($_SESSION['inputArr']['savSummary']))
+			if (!unlink($_SESSION['inputArr']['ngsRunForm']))
 			{
-				$errorlogger->error('deleting uploaded file(s) failed', ['user'=>$_SESSION['user'], 'file'=>__FILE__, 'line'=>__LINE__]);
+				$errorlogger->error('deleting uploaded file failed', ['user'=>$_SESSION['user'], 'file'=>__FILE__, 'line'=>__LINE__]);
 			}
 			unset($_SESSION['inputArr']);
 			trigger_error('005@'.$_SESSION['user'].'@'.__FILE__.'@'.__LINE__.'@0', E_USER_ERROR);
@@ -124,8 +124,8 @@
 				'readsPF'			=> null,
 				'aligned'			=> null,
 			];
-			// Create counter to check if the number of samples in the Request FORM (length of $sampleArr) corresponds
-			// to the number of samples in the Excel copy of the SAV index tab ($noSamplesIndex)
+			// Create counter to check if the number of samples in the NGS_RUN_FORM tab 04_List_Details (length of $sampleArr)
+			// corresponds to the number of samples in the tab SAV_Index ($noSamplesIndex)
 			$noSamplesIndex = 0;
 						
 			// Set up Excel readers
@@ -133,8 +133,8 @@
 			{
 				// Excel extension is xlsx
 				$filetype = 'Excel2007';
-				$requestSheet = '01-ListDetails';
-				// Different readers for each file
+				$requestSheet = '04-List_Details';
+				// Different readers for each tab
 				$requestReader = PHPExcel_IOFactory::createReader($filetype);
 				$indexReader = PHPExcel_IOFactory::createReader($filetype);
 				$summaryReader = PHPExcel_IOFactory::createReader($filetype);

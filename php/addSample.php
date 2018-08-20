@@ -31,12 +31,10 @@
 			'runId'			=> null,
 			'runNumber'		=> null,
 			'startDate'		=> null,
-			'requestForm'	=> null,
-			'savIndex'		=> null,
-			'savSummary'	=> null,
+			'ngsRunForm'	=> null
 		];
 		// Define error variables and set to empty value
-		$runIdErr = $requestFormErr = $savSummaryErr = $savIndexErr = "";
+		$runIdErr = $ngsRunFormErr = "";
 		// Create connection to database
 		$dbconn = false;
 		if (($dbconn = pg_connect($_SESSION['connString'])) === false)
@@ -88,78 +86,32 @@
 						}
 					}
 				} // end check input runId
-				if ($_FILES['requestForm']['size'] == 0
-						|| $_FILES['requestForm']['size'] > 900000)
+				if ($_FILES['ngsRunForm']['size'] == 0
+						|| $_FILES['ngsRunForm']['size'] > 900000)
 				{
-					$inputArr['requestForm'] = null;
-					$requestFormErr = "required";
+					$inputArr['ngsRunForm'] = null;
+					$ngsRunFormErr = "required";
 				}
 				else
 				{
-					$targetFile = $_SESSION['upload'] . '/' . $_SESSION['user'] . "_" . basename($_FILES['requestForm']['name']);
+					$targetFile = $_SESSION['upload'] . '/' . $_SESSION['user'] . "_" . basename($_FILES['ngsRunForm']['name']);
 					$fileType = pathinfo($targetFile,PATHINFO_EXTENSION);
 					if ($fileType != 'xlsx')
 					{
-						$inputArr['requestForm'] = null;
-						$requestFormErr = "xlsx required";
+						$inputArr['ngsRunForm'] = null;
+						$ngsRunFormErr = "xlsx required";
 					}
 					else
 					{
-						$inputArr['requestForm'] = $targetFile;
-						$requestFormErr = "";
-						move_uploaded_file($_FILES['requestForm']['tmp_name'], $targetFile);
+						$inputArr['ngsRunForm'] = $targetFile;
+						$ngsRunFormErr = "";
+						move_uploaded_file($_FILES['ngsRunForm']['tmp_name'], $targetFile);
 					}
-				} // end check input requestForm
-				if ($_FILES['savIndex']['size'] == 0
-						|| $_FILES['savIndex']['size'] > 900000)
-				{
-					$inputArr['savIndex'] = null;
-					$savIndexErr = "required";
-				}
-				else
-				{
-					$targetFile = $_SESSION['upload'] . '/' . $_SESSION['user'] . "_" . basename($_FILES['savIndex']['name']);
-					$fileType = pathinfo($targetFile,PATHINFO_EXTENSION);
-					if ($fileType != 'xlsx')
-					{
-						$inputArr['savIndex'] = null;
-						$savIndexErr = "xlsx required";
-					}
-					else
-					{
-						$inputArr['savIndex'] = $targetFile;
-						$savIndexErr = "";
-						move_uploaded_file($_FILES['savIndex']['tmp_name'], $targetFile);
-					}
-				} // end check input savIndex
-				if ($_FILES['savSummary']['size'] == 0
-						|| $_FILES['savSummary']['size'] > 900000)
-				{
-					$inputArr['savSummary'] = null;
-					$savSummaryErr = "required";
-				}
-				else
-				{
-					$targetFile = $_SESSION['upload'] . '/' . $_SESSION['user'] . "_" . basename($_FILES['savSummary']['name']);
-					$fileType = pathinfo($targetFile,PATHINFO_EXTENSION);
-					if ($fileType != 'xlsx')
-					{
-						$inputArr['savSummary'] = null;
-						$savSummaryErr = "xlsx required";
-					}
-					else
-					{
-						$inputArr['savSummary'] = $targetFile;
-						$savSummaryErr = "";
-						move_uploaded_file($_FILES['savSummary']['tmp_name'], $targetFile);
-					}
-				} // end check input savSummary
+				} // end check input ngsRunForm
 				// check if all inputs are ok
 				if (!empty($inputArr['runId'])
 					&& !empty($inputArr['runNumber'])
-					&& !empty($inputArr['requestForm'])
-					&& !empty($inputArr['savIndex'])
-					&& !empty($inputArr['savSummary']))
+					&& !empty($inputArr['ngsRunForm']))
 				{
 					$_SESSION['inputArr'] = $inputArr;
 					unset($_POST['continue']);
@@ -220,22 +172,10 @@
 		}
 ?>
 			<p>
-				<label for="requestForm">Request FORM:</label>
+				<label for="ngsRunForm">NGS_RUN_FORM:</label>
 				<input type="hidden" name="MAX_FILE_SIZE" value="900000" /> <!--MAX_FILE_SIZE (in bytes) to ensure that file to be uploaded is not too big-->
-				<input id="requestForm" type="file" name="requestForm" title="e.g.NGS-request_FORM.xlsx" required /> <!--requestForm is the name of the file in the global $_FILES -->
-				<span class="error">* <?php echo($requestFormErr); ?></span>
-			</p>
-			<p>
-				<label for="savIndex">SAV index tab:</label>
-				<input type="hidden" name="MAX_FILE_SIZE" value="900000" /> <!--MAX_FILE_SIZE (in bytes) to ensure that file to be uploaded is not too big-->
-				<input id="savIndex" type="file" name="savIndex" title="e.g.savIndex.xlsx" required /> <!--savIndex is the name of the file in the global $_FILES -->
-				<span class="error">* <?php echo($savIndexErr); ?></span>
-			</p>
-			<p>
-				<label for="savSummary">SAV summary tab:</label>
-				<input type="hidden" name="MAX_FILE_SIZE" value="900000" /> <!--MAX_FILE_SIZE (in bytes) to ensure that file to be uploaded is not too big-->
-				<input id="savSummary" type="file" name="savSummary" title="e.g.savSummary.xlsx" required /> <!--savSummary is the name of the file in the global $_FILES -->
-				<span class="error">* <?php echo($savSummaryErr); ?></span>
+				<input id="ngsRunForm" type="file" name="ngsRunForm" title="e.g.NGS_RUN_FORM.xlsx" required /> <!--ngsRunForm is the name of the file in the global $_FILES -->
+				<span class="error">* <?php echo($ngsRunFormErr); ?></span>
 			</p>
 			<div class="buttonBox">
 				<a class="buttonMarginRight" href="home.php">Cancel</a>
