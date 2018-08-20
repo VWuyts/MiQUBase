@@ -25,32 +25,34 @@
 ?>
 		<table>
 			<tr>
-				<td><a href="reportQc.php">Report: QC parameters</a></td>
+				<td><a href="reports.php">Reports</a></td>
 				<td><a href="addResultSentDate.php">Add result sent date</a></td>
-			</tr>
-			<tr>
-				<td><a href="reportToRepeat.php">Report: samples to repeat</a></td>
-				<td><a href="addSampleToRepeat.php">Add samples to repeat</a></td>
+				<td><a href="administrativeTasks.php">Administrative tasks</a></td>
 			</tr>
 			<tr>
 				<td><a href="query.php">Query database</a></td>
+				<td><a href="addSampleToRepeat.php">Add samples to repeat</a></td>
+				<td><a href="userManagement.php">User management</a></td>
+			</tr>
+			<tr>
+				<td></td>
 				<td><a href="addRun.php">Add run</a></td>
+				<td><a href="#">Data management</a></td> <!--TODO-->
 			</tr>
 			<tr>
 				<td></td>
 				<td><a href="addSample.php">Add samples to run</a></td>
+				<td><a href="#">Invoicing</a></td> <!--TODO-->
 			</tr>
 			<tr>
 				<td></td>
 				<td><a href="addSampleComment.php">Add comment to sample</a></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td><a href="addRunComment.php">Add comment to run</a></td>
-			</tr>
-			<tr>
 				<td></td>
-				<td><a href="administrativeTasks.php">Administrative tasks</a></td>
 			</tr>
 		</table>
 <?php
