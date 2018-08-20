@@ -27,14 +27,14 @@
 		echo("\t\t<div id='footerright'>\n");
 			if ($inDirPhp) echo("\t\t\t<img id='logotm' src='../images/tm_vignet_web.png' alt='logo Thomas More' />\n");
 			else echo("\t\t\t<img id='logotm' src='images/tm_vignet_web.png' alt='logo Thomas More' />\n");
-			echo("\t\t\t<p>Copyright &copy; 2017 V&eacute;ronique Wuyts</p>\n");
+			echo("\t\t\t<p>Copyright &copy; 2017-2018 V&eacute;ronique Wuyts</p>\n");
 			echo("\t\t\t<p>Professionele Bachelor Elektronica-ICT</p>\n");
 			echo("\t\t\t<p>Thomas More Mechelen-Antwerpen vzw &ndash; Campus De Nayer</p>\n");
 		echo("\t\t</div>\n");
 		echo("\t\t<div id='footercenter'>\n");
 			if ($inDirPhp) echo("\t\t\t<img id='logomiqubase' src='../images/logomiqubase_white.svg' alt='logo MiQUBase' />\n");
 			else echo("\t\t\t<img id='logomiqubase' src='images/logomiqubase_white.svg' alt='logo MiQUBase' />\n");
-			echo("\t\t\t<p>Last update 25/02/2018</p>\n");
+			echo("\t\t\t<p>Last update 10/03/2018</p>\n");
 		echo("\t\t</div>\n");
 		echo("\t\t<p class='spacer'></p>\n");
 		echo("\t</footer>\n");
