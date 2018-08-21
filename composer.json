@@ -1,0 +1,25 @@
+{
+    "name": "vwuyts/miqubase",
+    "description": "MiQUBase - Application for the management of the quality and use of the NGS platform @Sciensano",
+    "type": "project",
+    "keywords": ["NGS", "MiSeq", "database"],
+    "homepage": "https://github.com/VWuyts/MiQUBase",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Veronique Wuyts",
+            "email": "veronique.wuyts@student.thomasmore.be"
+        }
+    ],
+
+    "require": {
+        "php": "^7.1.1",
+        "ext-pdo_pgsql": "*",
+        "ext-pgsql": "*",
+        
+        "monolog/monolog": "^1.23.0",
+        "mpdf/mpdf": "^7.1.0",
+        "phpoffice/phpspreadsheet": "^1.3.1"
+
+    }
+}
