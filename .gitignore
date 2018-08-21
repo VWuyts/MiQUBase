@@ -11,6 +11,7 @@
 
 # External libraries
 php/externalclasses/*
+vendor/
 
 # Message files
 message/*
