@@ -129,11 +129,12 @@
 								$_SESSION['initials'] = $initials;
 								$_SESSION['role'] = $role;
 								$_SESSION['connString'] = $connString;
-								// Set configurations for logging and upload
+								// Set configurations
 								$_SESSION['activitylog'] = $GLOBALS['activitylog'];
 								$_SESSION['errorlog'] = $GLOBALS['errorlog'];
 								$_SESSION['maxfiles'] = $GLOBALS['maxfiles'];
 								$_SESSION['upload'] = $config['upload'];
+								$_SESSION['months'] = 'P' . $config['months'] . 'M';
 								// Create log message
 								$activitylogger->info('login succeeded', ['user'=>$_SESSION['user']]);
 								pg_close($dbconn);

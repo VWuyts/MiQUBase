@@ -153,8 +153,9 @@
 				$_SESSION['report'] = $qcParameters;
 			}
 			
-			// Create date variable to limit the number of retrieved runs to those within the last 12 months
-			$date = (date_sub(date_create(date('Y-m-d')), new DateInterval('P12M')))->format('Y-m-d');
+			// Create date variable to limit the number of retrieved runs to those within the last number of months
+			// as specified in de configuration
+			$date = (date_sub(date_create(date('Y-m-d')), new DateInterval($_SESSION['months'])))->format('Y-m-d');
 			// Create arrays to collect query data
 			$_SESSION['runnumbers'] = array();
 			$_SESSION['laneids'] = array();

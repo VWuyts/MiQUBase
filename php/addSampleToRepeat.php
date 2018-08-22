@@ -256,8 +256,9 @@
 				}
 			}
 			
-			// Create date variable to limit the number of retrieved runs to those within the last 12 months
-			$date = (date_sub(date_create(date('Y-m-d')), new DateInterval('P12M')))->format('Y-m-d');
+			// Create date variable to limit the number of retrieved runs to those within the last number of months
+			// as specified in de configuration
+			$date = (date_sub(date_create(date('Y-m-d')), new DateInterval($_SESSION['months'])))->format('Y-m-d');
 			// Create array to keep track of number of samples for which remarks are valid
 			$_SESSION['noSamples'] = array();
 			// first step is to select run number

@@ -1,5 +1,5 @@
 <?php
-/* Copyright (C) 2017 Véronique Wuyts
+/* Copyright (C) 2017-2018 Véronique Wuyts
  * student at Thomas More Mechelen-Antwerpen vzw -- Campus De Nayer
  * Professionele Bachelor Elektronica-ICT
  *
@@ -20,9 +20,9 @@ require '../php/functions.php';
 createHead(true, 'MiQUBase message', ['message'], null);
 createHeader('vwuyts', false);
 ?>
-		<p class='message'>1 samples of run 2017_013</p>
-		<p class='message'>have been marked 'to repeat' in MiQUBase.</p>
-		<p><a href='../php/home.php'>Back home page</a></p>
+		<p class='message'>For 4 samples of run 2017_002</p>
+		<p class='message'>a result sent date has been added in MiQUBase.</p>
+		<p><a href='../php/home.php'>Back to home page</a></p>
 <?php
 createFooter(true);
 ?>

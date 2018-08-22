@@ -354,8 +354,12 @@
 			}
 			
 			// Show form
-			// Create date variable to limit the number of retrieved runs to those within the last 12 months
-			//$date = (date_sub(date_create(date('Y-m-d')), new DateInterval('P12M')))->format('Y-m-d');
+			// Create date variable to limit the number of retrieved runs to those within the last number of months
+			// as specified in de configuration.
+			// This feature is not implemented here, as number of runs should only be limited to those runs with
+			// samples that have no result sent date
+			//$date = (date_sub(date_create(date('Y-m-d')), new DateInterval($_SESSION['months'])))->format('Y-m-d');
+
 			// Create array to keep track of number of samples for which result sent dates are valid
 			$noSamples = array();
 			
