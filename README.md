@@ -36,7 +36,7 @@ configuration values.
 Veronique Wuyts - <veronique.wuyts@student.thomasmore.be>
 
 ### License
-MiQUBase is licensed under the GNU General Public License - see the `[LICENSE](LICENSE)` file for details.
+MiQUBase is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details.
 
 ### Acknowledgements
 This project was made possible by Sigrid De Keersmaecker and Nancy Roosens of the Transversal and Applied
