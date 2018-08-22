@@ -10,11 +10,11 @@
 !.vscode/extensions.json
 
 # External libraries
-php/externalclasses/*
 vendor/
 
 # Message files
-message/*
+error.php
+message.php
 
 # Files uploaded in MiQUBase
 uploads/*
