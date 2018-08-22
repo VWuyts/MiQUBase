@@ -134,7 +134,9 @@
 								$_SESSION['errorlog'] = $GLOBALS['errorlog'];
 								$_SESSION['maxfiles'] = $GLOBALS['maxfiles'];
 								$_SESSION['upload'] = $config['upload'];
+								$_SESSION['tmp'] = $config['tmp'];
 								$_SESSION['months'] = 'P' . $config['months'] . 'M';
+								$_SESSION['service'] = $config['service'];
 								// Create log message
 								$activitylogger->info('login succeeded', ['user'=>$_SESSION['user']]);
 								pg_close($dbconn);
